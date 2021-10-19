@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: orko-service
+spec:
+  ports:
+    - name: service-one
+      protocol: TCP
+      port: 4444
+      targetPort: 80
+  selector:
+    app: ex-orko
+  type: LoadBalancer

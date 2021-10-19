@@ -1,0 +1,23 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orko
+  labels:
+    app: ex-orko
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: ex-orko
+  template:
+    metadata:
+      labels:
+        app: ex-orko
+    spec:
+      containers:
+        - name: ex-orko-container
+          image: nginx:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
